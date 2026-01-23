@@ -5,12 +5,12 @@ using PebriBox.Application.Wrappers;
 
 namespace PebriBox.Application.Features.Agents.Queries;
 
-public class GetAgent : IRequest<IResponseWrapper>
+public class GetAgentQuery : IRequest<IResponseWrapper>
 {
     public int AgentId { get; set; }
 }
 
-public class GetAgentQueryHandler : IRequestHandler<GetAgent, IResponseWrapper>
+public class GetAgentQueryHandler : IRequestHandler<GetAgentQuery, IResponseWrapper>
 {
     private readonly IAgentService _agentService;
 
@@ -19,7 +19,7 @@ public class GetAgentQueryHandler : IRequestHandler<GetAgent, IResponseWrapper>
         _agentService = agentService;
     }
 
-    public async Task<IResponseWrapper> Handle(GetAgent request, CancellationToken cancellationToken)
+    public async Task<IResponseWrapper> Handle(GetAgentQuery request, CancellationToken cancellationToken)
     {
         var agent = await _agentService.GetByIdAsync(request.AgentId);
         if (agent == null)
