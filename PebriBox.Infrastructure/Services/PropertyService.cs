@@ -60,4 +60,9 @@ public class PropertyService(ApplicationDbContext context) : IPropertyService
         await _context.SaveChangesAsync();
         return property;
     }
+
+    public async Task<List<Property>> GetByAgentIdAsync(int agentId)
+    {
+        return await _context.Properties.Where(property => property.AgentId == agentId).ToListAsync();
+    }
 }

@@ -2,7 +2,7 @@ using System;
 
 namespace PebriBox.Application.Models.Responses;
 
-public class ProperyResponse
+public class PropertyResponse
 {
     public int Id { get; set; }
     public int AgentId { get; set; }
