@@ -1,5 +1,6 @@
 using PebriBox.Application;
 using PebriBox.Infrastructure;
+using PebriBox.WebAPI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,5 +26,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapPropertyEndpoints();
 
 app.Run();

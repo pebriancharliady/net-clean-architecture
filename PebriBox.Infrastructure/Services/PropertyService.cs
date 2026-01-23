@@ -11,6 +11,7 @@ public class PropertyService(ApplicationDbContext context) : IPropertyService
 
     public async Task<int> CreateAsync(Property newProperty)
     {
+        newProperty.ListingDate = DateTime.UtcNow;
         await _context.Properties.AddAsync(newProperty);
         await _context.SaveChangesAsync();
         return newProperty.Id;

@@ -9,5 +9,5 @@ public class AgentResponse
     public string LastName { get; set; }
     public string Email { get; set; }
     public string PhoneNumber { get; set; }
-    public List<ProperyResponse> PropertyListings { get; set; }
+    public List<PropertyResponse> PropertyListings { get; set; }
 }
