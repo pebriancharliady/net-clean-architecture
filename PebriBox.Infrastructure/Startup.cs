@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PebriBox.Application.Features.Agents;
+using PebriBox.Infrastructure.Services;
 
 namespace PebriBox.Infrastructure;
 
@@ -11,6 +13,6 @@ public static class Startup
         return services.AddDbContext<Contexts.ApplicationDbContext>(
             options => options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"),
                 builder => builder.MigrationsHistoryTable("Migrations", "EFCore"))
-        );
+        ).AddScoped<IAgentService, AgentService>();
     }
 }
