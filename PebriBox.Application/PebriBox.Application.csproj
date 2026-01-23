@@ -5,10 +5,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features/Agents/Commands/" />
+    <Folder Include="Features/Properties/" />
+    <Folder Include="Features/Properties/Commands/" />
+    <Folder Include="Features/Properties/Queries/" />
     <Folder Include="Models/" />
     <Folder Include="Models/Requests/" />
     <Folder Include="Models/Responses/" />
     <Folder Include="Wrappers/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mapster" Version="7.4.0" />
+    <PackageReference Include="MediatR" Version="14.0.0" />
   </ItemGroup>
 
   <PropertyGroup>
