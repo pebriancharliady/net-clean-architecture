@@ -7,5 +7,10 @@ public static class Startup
     {
         var propertyGroup = endpoint.MapGroup("properties").WithTags("Properties");
         propertyGroup.MapCreatePropertyEndoint();
+        propertyGroup.MapUpdatePropertyEndoint();
+        propertyGroup.MapDeletePropertyEndpoint();
+        propertyGroup.MapPropertyGetByIdEndpoint();
+        propertyGroup.MapGetPropertiesEndpoint();
+        propertyGroup.MapGetPropertiesForAgentEndpoint();
     }
 }
