@@ -6,14 +6,19 @@
 
   <ItemGroup>
     <Folder Include="Features/Agents/Commands/" />
+    <Folder Include="Features/Pipelines/" />
+    <Folder Include="Features/Pipelines/Contracts/" />
     <Folder Include="Features/Properties/" />
     <Folder Include="Features/Properties/Commands/" />
     <Folder Include="Features/Properties/Queries/" />
+    <Folder Include="Features/Properties/Validators/" />
     <Folder Include="Models/Requests/" />
     <Folder Include="Wrappers/" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
     <PackageReference Include="Mapster" Version="7.4.0" />
     <PackageReference Include="MediatR" Version="14.0.0" />
   </ItemGroup>

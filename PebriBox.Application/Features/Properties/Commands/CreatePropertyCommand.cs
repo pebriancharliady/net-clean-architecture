@@ -1,13 +1,14 @@
 using System;
 using Mapster;
 using MediatR;
+using PebriBox.Application.Features.Pipelines.Contracts;
 using PebriBox.Application.Models.Requests;
 using PebriBox.Application.Wrappers;
 using PebriBox.Domain.Entities;
 
 namespace PebriBox.Application.Features.Properties.Commands;
 
-public class CreatePropertyCommand : IRequest<IResponseWrapper>
+public class CreatePropertyCommand : IRequest<IResponseWrapper>, IValidatable
 {
     public CreatePropertyRequest CreateProperty { get; set; }
 }

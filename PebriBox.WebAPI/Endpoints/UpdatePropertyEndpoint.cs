@@ -16,7 +16,7 @@ public static class UpdatePropertyEndpoint
                 UpdateProperty = updatePropertyRequest
             };
             var result = await sender.Send(command);
-            return Results.Ok(result);
+            return result.IsSuccess ? Results.Ok(result) : Results.BadRequest(result);
         }).Produces<ResponseWrapper<int>>(StatusCodes.Status200OK).Produces<ResponseWrapper<int>>(StatusCodes.Status404NotFound);
     }
 }

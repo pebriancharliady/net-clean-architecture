@@ -16,7 +16,9 @@ public static class CreatePropertyEndpoint
                 CreateProperty = createPropertyRequest
             };
             var result = await sender.Send(command);
-            return Results.Ok(result);
-        }).Produces<ResponseWrapper<int>>(StatusCodes.Status200OK);
+            return result.IsSuccess ? Results.Ok(result) : Results.BadRequest(result);
+        })
+        .Produces<ResponseWrapper<int>>(StatusCodes.Status200OK)
+        .Produces<ResponseWrapper<int>>(StatusCodes.Status400BadRequest);
     }
 }
